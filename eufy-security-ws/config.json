@@ -1,0 +1,39 @@
+{
+  "name": "Eufy Security WS",
+  "version": "0.4.2",
+  "slug": "eufy-security-ws",
+  "description": "Small server wrapper around eufy-security-client library to access it via a WebSocket.",
+  "arch": ["aarch64", "amd64", "armhf", "armv7"],
+  "url": "https://github.com/bropat/eufy-security-ws",
+  "startup": "services",
+  "legacy": true,
+  "ports": {
+    "3000/tcp": 3000
+  },
+  "ports_description": {
+    "3000/tcp": "WebSocket listening port"
+  },
+  "options": {
+    "USERNAME": null,
+    "PASSWORD": null,
+    "COUNTRY": null,
+    "EVENT_DURATION_SECONDS": null,
+    "LANGUAGE": null,
+    "P2P_CONNECTION_SETUP": null,
+    "POLLING_INTERVAL_MINUTES": null,
+    "TRUSTED_DEVICE_NAME": null,
+    "ACCEPT_INVITATIONS": null
+  },
+  "schema": {
+    "USERNAME": "email",
+    "PASSWORD": "password",
+    "COUNTRY": "str(2,2)?",
+    "EVENT_DURATION_SECONDS": "int(0,)?",
+    "LANGUAGE": "str(2,3)?",
+    "P2P_CONNECTION_SETUP": "int(0,)?",
+    "POLLING_INTERVAL_MINUTES": "int(0,)?",
+    "TRUSTED_DEVICE_NAME": "str?",
+    "ACCEPT_INVITATIONS": "bool?"
+  },
+  "image": "bropat/eufy-security-ws"
+}
