@@ -14,14 +14,14 @@
     "3000/tcp": "WebSocket listening port"
   },
   "options": {
-    "USERNAME": null,
-    "PASSWORD": null,
-    "COUNTRY": null
+    "USERNAME": "",
+    "PASSWORD": "",
+    "COUNTRY": ""
   },
   "schema": {
     "USERNAME": "email",
     "PASSWORD": "password",
-    "COUNTRY": "str(2,2)?"
+    "COUNTRY": "str"
   },
   "image": "bropat/eufy-security-ws"
 }
