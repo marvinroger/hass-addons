@@ -16,24 +16,12 @@
   "options": {
     "USERNAME": null,
     "PASSWORD": null,
-    "COUNTRY": null,
-    "EVENT_DURATION_SECONDS": null,
-    "LANGUAGE": null,
-    "P2P_CONNECTION_SETUP": null,
-    "POLLING_INTERVAL_MINUTES": null,
-    "TRUSTED_DEVICE_NAME": null,
-    "ACCEPT_INVITATIONS": null
+    "COUNTRY": null
   },
   "schema": {
     "USERNAME": "email",
     "PASSWORD": "password",
-    "COUNTRY": "str(2,2)?",
-    "EVENT_DURATION_SECONDS": "int(0,)?",
-    "LANGUAGE": "str(2,3)?",
-    "P2P_CONNECTION_SETUP": "int(0,)?",
-    "POLLING_INTERVAL_MINUTES": "int(0,)?",
-    "TRUSTED_DEVICE_NAME": "str?",
-    "ACCEPT_INVITATIONS": "bool?"
+    "COUNTRY": "str(2,2)?"
   },
   "image": "bropat/eufy-security-ws"
 }
