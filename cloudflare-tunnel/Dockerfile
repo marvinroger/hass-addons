@@ -12,6 +12,7 @@ RUN \
     && if [[ "${BUILD_ARCH}" = "amd64" ]]; then CLOUDFLARED_ARCH="amd64"; fi \
     && if [[ "${BUILD_ARCH}" = "i386" ]]; then CLOUDFLARED_ARCH="386"; fi \
     && curl -L -s -o /opt/cloudflared "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-${CLOUDFLARED_ARCH}" \
-    && chmod +x /opt/cloudflared
+    && chmod +x /opt/cloudflared \
+    && apk add --no-cache libc6-compat
 
 COPY rootfs /
