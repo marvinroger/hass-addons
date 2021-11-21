@@ -4,5 +4,6 @@ config_path=$(bashio::config "CONFIG_PATH")
 
 bashio::log.info "Starting cloudflared..."
 
-# / Check URL
+ls -la /opt/
+
 exec /opt/cloudflared tunnel --metrics 127.0.0.1:8099 --config "$config_path" run
