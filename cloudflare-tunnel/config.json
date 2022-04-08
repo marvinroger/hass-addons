@@ -1,9 +1,10 @@
 {
   "name": "Cloudflare Tunnel",
-  "version": "1.0.1",
+  "version": "2022.4.0-1",
   "slug": "cloudflare-tunnel",
   "description": "With Tunnel, create a private link from your Home Assistant server directly to Cloudflare without a publicly routable IP address",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "image": "ghcr.io/marvinroger/hass-addons/addon-cloudflare-tunnel-{arch}",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
   "url": "https://github.com/marvinroger/hass-addons/tree/main/cloudflare-tunnel",
   "startup": "services",
   "map": ["config"],
