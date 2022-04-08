@@ -16,4 +16,4 @@ RUN if [[ "${BUILD_ARCH}" = "armhf" ]]; then CLOUDFLARED_ARCH="arm"; \
 
 COPY rootfs /
 
-CMD ["/opt/run.sh"]
+CMD ["/opt/run"]
