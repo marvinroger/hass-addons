@@ -1,28 +1,13 @@
-name: "Deploy"
+name: "cloudflare-tunnel"
 
 on:
   push:
     branches: [main]
+    paths: ['cloudflare-tunnel/**']
 
 jobs:
-  changes:
-    name: Changes
-    runs-on: ubuntu-latest
-    outputs:
-      cloudflare-tunnel: ${{ steps.filter.outputs.cloudflare-tunnel }}
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          filters: |
-            cloudflare-tunnel:
-              - 'cloudflare-tunnel/**'
-
   deploy:
     name: Deploy
-    needs: changes
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -33,12 +18,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy cloudflare-tunnel
-        if: needs.changes.outputs.cloudflare-tunnel == 'true'
+      - name: Deploy
         uses: home-assistant/builder@master
         with:
           args: |
             --all \
+            --docker-hub ghcr.io/${{ github.repository_owner }} --image cloudflare-tunnel \
             --target cloudflare-tunnel
         env:
           CAS_API_KEY: ${{ secrets.CAS_API_KEY }}
