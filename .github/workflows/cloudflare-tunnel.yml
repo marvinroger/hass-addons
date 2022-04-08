@@ -23,7 +23,7 @@ jobs:
         with:
           args: |
             --all \
-            --docker-hub ghcr.io/${{ github.repository_owner }} --image cloudflare-tunnel \
+            --docker-hub ghcr.io/${{ github.repository_owner }} --image hass-addon-cloudflare-tunnel-{arch} \
             --target cloudflare-tunnel
         env:
           CAS_API_KEY: ${{ secrets.CAS_API_KEY }}
