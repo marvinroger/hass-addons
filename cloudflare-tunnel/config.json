@@ -10,8 +10,8 @@
   "startup": "services",
   "map": ["config"],
   "ingress": true,
-  "ingress_entry": "/metrics",
-  "watchdog": "http://[HOST]:[PORT:8099]/ready",
+  "ingress_entry": "/ready",
+  "watchdog": "http://[HOST]:8099/ready",
   "panel_icon": "mdi:tunnel-outline",
   "options": {
     "CONFIG_PATH": "/config/cloudflare-tunnel/config.yml"
