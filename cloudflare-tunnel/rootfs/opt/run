@@ -4,4 +4,4 @@ config_path=$(bashio::config "CONFIG_PATH")
 
 bashio::log.info "Starting cloudflared..."
 
-exec /opt/cloudflared tunnel --config "$config_path" --no-autoupdate run
+exec /opt/cloudflared tunnel --config "$config_path" --no-autoupdate --metrics "localhost:8099" run
