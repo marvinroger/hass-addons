@@ -1,7 +1,28 @@
 #!/usr/bin/with-contenv bashio
 
-config_path=$(bashio::config "CONFIG_PATH")
+config_path_variable_name="CONFIG_PATH"
+token_variable_name="TOKEN"
 
-bashio::log.info "Starting cloudflared..."
+has_config_path=$(bashio::config.has_value "$config_path_variable_name")
+config_path=$(bashio::config "$config_path_variable_name")
 
-exec /opt/cloudflared tunnel --config "$config_path" --no-autoupdate --metrics "0.0.0.0:8099" run
+has_token=$(bashio::config.has_value "$token_variable_name")
+token=$(bashio::config "$token_variable_name")
+
+if [[ ($has_config_path && $has_token) || (! $has_config_path && ! $has_token) ]]; then
+  bashio::log.fatal "Make sure exactly one of $config_path_variable_name or $token_variable_name is set"
+  exit 1
+fi
+
+if [[ $has_config_path ]]; then
+  bashio::log.info "Starting cloudflared in config mode..."
+  exec /opt/cloudflared tunnel --config "$config_path" --no-autoupdate --metrics "0.0.0.0:8099" run
+fi
+
+if [[ $has_token ]]; then
+  bashio::log.info "Starting cloudflared in token mode..."
+  exec /opt/cloudflared tunnel --no-autoupdate --metrics "0.0.0.0:8099" run --token "$token"
+fi
+
+bashio::log.fatal "Unreachable"
+exit 1

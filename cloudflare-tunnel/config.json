@@ -1,6 +1,6 @@
 {
   "name": "Cloudflare Tunnel",
-  "version": "2022.4.0-8",
+  "version": "2022.4.1",
   "slug": "cloudflare-tunnel",
   "description": "With Tunnel, create a private link from your Home Assistant server directly to Cloudflare without a publicly routable IP address",
   "image": "ghcr.io/marvinroger/hass-addon-cloudflare-tunnel-{arch}",
@@ -20,9 +20,11 @@
   },
   "panel_icon": "mdi:tunnel-outline",
   "options": {
-    "CONFIG_PATH": "/config/cloudflare-tunnel/config.yml"
+    "CONFIG_PATH": "",
+    "TOKEN": ""
   },
   "schema": {
-    "CONFIG_PATH": "str"
+    "CONFIG_PATH": "str?",
+    "TOKEN": "str?"
   }
 }
