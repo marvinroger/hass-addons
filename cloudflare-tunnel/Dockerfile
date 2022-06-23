@@ -5,8 +5,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ARG BUILD_ARCH
 ARG CLOUDFLARED_VERSION
-RUN if [[ "${BUILD_ARCH}" = "armhf" ]]; then CLOUDFLARED_ARCH="arm"; \
-    elif [[ "${BUILD_ARCH}" = "armv7" ]]; then CLOUDFLARED_ARCH="arm"; \
+RUN if [[ "${BUILD_ARCH}" = "armhf" ]]; then CLOUDFLARED_ARCH="armhf"; \
+    elif [[ "${BUILD_ARCH}" = "armv7" ]]; then CLOUDFLARED_ARCH="armhf"; \
     elif [[ "${BUILD_ARCH}" = "aarch64" ]]; then CLOUDFLARED_ARCH="arm64"; \
     elif [[ "${BUILD_ARCH}" = "amd64" ]]; then CLOUDFLARED_ARCH="amd64";  \
     elif [[ "${BUILD_ARCH}" = "i386" ]]; then CLOUDFLARED_ARCH="386"; \
