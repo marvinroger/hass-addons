@@ -8,6 +8,7 @@
   "startup": "services",
   "legacy": true,
   "ingress": true,
+  "ingress_entry": "/endpoint/@scrypted/core/public/",
   "host_network": true,
   "environment": {
     "SCRYPTED_INSECURE_PORT": "8099",
