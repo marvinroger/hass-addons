@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2022.11.1 - 2022-12-03
+
+### Changed
+
+- Update cloudflared to 2022.11.1
+
 ## 2022.8.2-1 - 2022-08-17
 
 ### Changed
