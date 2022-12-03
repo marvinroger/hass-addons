@@ -23,7 +23,7 @@
     "USERNAME": "email",
     "PASSWORD": "password",
     "COUNTRY": "str",
-    "TRUSTED_DEVICE_NAME": ""
+    "TRUSTED_DEVICE_NAME": "str"
   },
   "image": "bropat/eufy-security-ws"
 }
