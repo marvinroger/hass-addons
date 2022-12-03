@@ -1,6 +1,6 @@
 {
   "name": "Eufy Security WS",
-  "version": "0.9.4",
+  "version": "1.2.0",
   "slug": "eufy-security-ws",
   "description": "Small server wrapper around eufy-security-client library to access it via a WebSocket.",
   "arch": ["aarch64", "amd64", "armhf", "armv7"],

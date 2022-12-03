@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 1.2.0 - 2022-12-03
+
+### Changed
+
+- Update eufy-security-ws to 1.2.0
+
+
 ## 0.9.4 - 2022-08-17
 
 ### Changed
