@@ -16,12 +16,14 @@
   "options": {
     "USERNAME": "",
     "PASSWORD": "",
-    "COUNTRY": ""
+    "COUNTRY": "",
+    "TRUSTED_DEVICE_NAME": ""
   },
   "schema": {
     "USERNAME": "email",
     "PASSWORD": "password",
-    "COUNTRY": "str"
+    "COUNTRY": "str",
+    "TRUSTED_DEVICE_NAME": ""
   },
   "image": "bropat/eufy-security-ws"
 }
